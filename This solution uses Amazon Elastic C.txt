@@ -1,0 +1,31 @@
+This solution uses Amazon Elastic Container Registry (Amazon ECR), Amazon Elastic Container Service (Amazon ECS), and AWS Fargate to host containerized applications without the need to provision and manage servers.
+
+Use the AWS Cloud9 integrated development environment (IDE) to create a Docker image of your application.
+
+
+To create a Docker image, you must create a file called Dockerfile. A Dockerfile is a manifest that describes the base image to use for your Docker image and what you want to install and run on it.
+
+Use the "docker build" command to build Docker images from a Dockerfile and a context. A build's context is the set of files for the containerized application located in a specified path or URL.
+
+
+Amazon ECR is an AWS managed container image registry service that is secure, scalable, and reliable. You can store, share, and deploy your container software anywhere.
+
+After the Docker image is created, push your container image to an Amazon ECR repository.
+
+A task definition is required to run Docker containers in Amazon ECS. A task definition specifies parameters (such as CPU and memory) to use with each task, launch type, networking mode, logging configuration, run command, data volume, and IAM role that your task uses.
+
+Amazon ECS is a highly scalable Docker container management service that helps you run and manage distributed applications that run in Docker containers.
+
+An Amazon ECS cluster is a logical grouping of tasks or services running on Amazon Elastic Compute Cloud (Amazon EC2) instances. A task is the instantiation of a task definition within a cluster. If you want to maintain a desired number of tasks simultaneously in a cluster, you use Amazon ECS.
+
+AWS Fargate is a technology that you can use with Amazon ECS to run containers without having to manage servers or clusters of EC2 instances.
+
+Fargate is a quick way to launch and run containers on AWS. Customers that want greater control of their EC2 instances (to support compliance and governance requirements or broader customization options) can choose to use Amazon ECS without Fargate.
+
+
+Amazon ECS uses containers provisioned by Fargate to automatically scale, load balance, and manage scheduling of your containers for availability, providing a streamlined way to build and operate containerized applications.
+
+You can run your Amazon ECS task on Fargate to deploy and access your containerized application.
+
+
+To deploy and access a second containerized application, create a new Docker image, create a task definition, and run a new task in the Amazon ECS cluster.
